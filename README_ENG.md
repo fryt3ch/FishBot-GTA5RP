@@ -25,7 +25,7 @@ Object detection from an input image
     + For admin: giving new keys with subscribtion (both for fish bot and for anti-captcha), get all the info about user, cancel users subsribtions, reset users HWID
 
 ### Constituents of fishing on this project (GTA5 RP):  
-+ We have a fishing rod (there are 3 types of it, they all contains the word **Удочка** (**Rod**) in their name)  
++ We have a fishing rod (there are 3 types of it, they all contain the word **Удочка** (**Rod**) in their name)  
 ![изображение](https://user-images.githubusercontent.com/37770139/142511014-a07bde9c-8358-4d6f-bdc3-eb5bf9b55ff9.png)
 + We have a bait (price - **35$**)  
 ![изображение](https://user-images.githubusercontent.com/37770139/142510955-fa0946e7-3ae7-411a-bb27-38231627e97e.png "Bait")
