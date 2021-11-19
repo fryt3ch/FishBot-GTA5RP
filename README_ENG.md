@@ -34,7 +34,7 @@ Object detection from an input image
 + There are mood and hunger systems on server. Such indicators of bad mood and hunger are placed beside a fishing-allowed place indicator
     + Bad mood (appearance of **purple** indicator) adds an essential chance of breaking our rod while fishing
     + Hunger (appearance of **orange** indicator) gradually decreases our player's health
-+ There are a variaty of fish, each of which has it's own chance and price
++ There are a variaty of fish, each of them has it's own chance and price
 + Each fish has it's own weight, that's why our inventory (max. 10 kg) overweights. There are also some bags on this server (with additional free weight to our inventory), so we've got an automatical inventory-to-bag fish shifting system in our bot.
 
 ### Principles of fishing on this project (GTA5 RP):  
