@@ -1,7 +1,7 @@
 # FishBot for GTA5 RP
 ## Умный многофункциональный бот, способный решать Google reCaptcha v2
 
-[English README](docs/README_ENG.md)
+[English README](README_ENG.md)
 
 ### Используемые технологии (клиентская часть):
 + **C# + .NET Framework v4.7.2**  
