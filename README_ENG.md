@@ -42,9 +42,9 @@ Object detection from an input image
 + Wait some time while a special red (start) indicator isn't appered. Then quckly click right mouse boutton on the screen while white (stop) indicator isn't apperaed. (do it cyclically, while fish wasn't caught)   
 ![изображение](https://user-images.githubusercontent.com/37770139/142511626-afc6eea3-0716-486d-8b8a-8a3e6ccb541e.png "Start clicking")
 ![изображение](https://user-images.githubusercontent.com/37770139/142511669-71ba42a8-7212-4d9e-a313-60f877af07af.png "Make a pause")  
-+ When we catch our fish successfuly, we've got a special message about it in the buttom of the screen 
++ When we catch our fish successfuly, we've got a special message with fish name about it in the buttom of the screen 
 ![изображение](https://user-images.githubusercontent.com/37770139/142511882-cbb06210-1e58-47f9-af68-8c7443c9bcd9.png)  
-+ Caught fish appeares in our inventory and kept there in such a way
++ Caught fish appeares in our inventory and kept there in such a way  
 ![изображение](https://user-images.githubusercontent.com/37770139/142512745-136384e8-bfe9-42c1-b9de-e58a9e3f17fc.png)  
 + Every 20 fishes caught we need to pass **Google reCaptcha v2**, if we reject it and press the button **Я робот** (**I'm a robot**), then fishing will be restricted for us for 10-20-30-40-etc. minutes  
 ![изображение](https://user-images.githubusercontent.com/37770139/142514773-0d6a22cc-e2e9-43fb-bb47-b7b70ad0e227.png)
