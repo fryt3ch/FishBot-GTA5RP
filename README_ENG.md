@@ -7,19 +7,19 @@
 + **C# + .NET Framework v4.7.2**  
 All the program logic
 + **Tesseract OCR (wrapper for .NET Framework)**  
-Getting text from image
+Getting text from an input image
 + **XML**  
-Storing users settings
+Storing user's settings
 ### Server-side tools (anti-captcha):  
 + **C# + .NET Framework v4.7.2**  
 All the program logic
 + **Tesseract OCR (wrapper for .NET Framework)**  
-Getting text from image
+Getting text from an input image
 + **Yolo v3 (wrapper for .NET Framework)**   
-Object detection from input image
+Object detection from an input image
 ### Web:  
 + PHP, MySQL 
-    + Storing users, HWID's, subscription periods, VK ID. Processing automatic requests/responses from/to client
+    + Storing users, their HWIDs, subscription periods, VK IDs. Processing automatic requests/responses from/to client
 + Using VK API and messages of VKontakte Group (https://vk.com/fishbot_gta5rp)
     + For clients: processing requests (get a free key, get an existing key and it's subscribtion period)
     + For admin: giving new keys with subscribtion (both for fish bot and for anti-captcha), get all the info about user, cancel users subsribtions, reset users HWID
