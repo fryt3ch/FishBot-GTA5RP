@@ -6,16 +6,16 @@
 ### Client-side tools:
 + **C# + .NET Framework v4.7.2**  
 All the program logic
-+ **Tesseract OCR (wrapper for .NET Framework)**  
++ **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Getting text from an input image
 + **XML**  
 Storing user's settings
 ### Server-side tools (anti-captcha):  
 + **C# + .NET Framework v4.7.2**  
 All the program logic
-+ **Tesseract OCR (wrapper for .NET Framework)**  
++ **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Getting text from an input image
-+ **Yolo v3 (wrapper for .NET Framework)**   
++ **Yolo v3 (wrapper for .NET Framework: https://github.com/AlturosDestinations/Alturos.Yolo)**   
 Object detection from an input image
 ### Web:  
 + PHP, MySQL 
