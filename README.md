@@ -6,16 +6,16 @@
 ### Используемые технологии (клиентская часть):
 + **C# + .NET Framework v4.7.2**  
 Вся логика приложения
-+ **Tesseract OCR (wrapper for .NET Framework https://github.com/AlturosDestinations/Alturos.Yolo)**  
++ **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Получение текста из изображения  
 + **XML**  
 Хранение пользовательских настроек
 ### Используемые технологии (серверная часть анти-капчи):  
 + **C# + .NET Framework v4.7.2**  
 Вся логика приложения
-+ **Tesseract OCR (wrapper for .NET Framework)**  
++ **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Получение текста из изображения  
-+ **Yolo v3 (wrapper for .NET Framework)**   
++ **Yolo v3 (wrapper for .NET Framework: https://github.com/AlturosDestinations/Alturos.Yolo)**   
 Обнаружение объектов на изображении  
 ### Используемые технологии (веб часть):  
 + PHP, MySQL 
