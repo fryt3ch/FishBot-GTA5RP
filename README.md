@@ -6,7 +6,7 @@
 ### Используемые технологии (клиентская часть):
 + **C# + .NET Framework v4.7.2**  
 Вся логика приложения
-+ **Tesseract OCR (wrapper for .NET Framework)**  
++ **Tesseract OCR (wrapper for .NET Framework https://github.com/AlturosDestinations/Alturos.Yolo)**  
 Получение текста из изображения  
 + **XML**  
 Хранение пользовательских настроек
