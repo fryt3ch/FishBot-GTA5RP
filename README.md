@@ -8,11 +8,15 @@
 Вся логика приложения
 + **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Получение текста из изображения  
++ **TCPWrapper by frytech (самописный wrapper для Sockets: https://github.com/fryt3ch/TCPWrapper-C#)**  
+Подключение и взаимодействие с сервером анти-капчи  
 + **XML**  
 Хранение пользовательских настроек
 ### Используемые технологии (серверная часть анти-капчи):  
 + **C# + .NET Framework v4.7.2**  
 Вся логика приложения
++ **TCPWrapper by frytech (самописный wrapper для Sockets: https://github.com/fryt3ch/TCPWrapper-C#)**  
+Обработка запросов, поступающих от бота, и отправка ответа   
 + **Tesseract OCR (wrapper for .NET Framework: https://github.com/charlesw/tesseract)**  
 Получение текста из изображения  
 + **Yolo v3 (wrapper for .NET Framework: https://github.com/AlturosDestinations/Alturos.Yolo)**   
