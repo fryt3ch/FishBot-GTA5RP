@@ -3,9 +3,12 @@
 
 [English README](README_ENG.md)
 
+[Используемые технологии (клиентская часть)](#client-side-tools)
+
 ![Screenshot_3](https://user-images.githubusercontent.com/37770139/143047460-00bc2495-92ee-4187-b003-be2a32378d38.png "Панель авторизации")  
 ![Screenshot_4](https://user-images.githubusercontent.com/37770139/143047470-cc7a5e04-061d-40f6-97a1-1a537c00ab56.png "Меню бота")  
 
+<a name="client-side-tools"/>
 ### Используемые технологии (клиентская часть):
 + **C# + .NET Framework v4.7.2**  
 Вся логика приложения
