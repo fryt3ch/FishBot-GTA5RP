@@ -50,9 +50,8 @@ Object detection from an input image
 ![изображение](https://user-images.githubusercontent.com/37770139/142514773-0d6a22cc-e2e9-43fb-bb47-b7b70ad0e227.png)
 
 
-
-![изображение](https://user-images.githubusercontent.com/37770139/142766796-adc3dcc4-ccf9-4a6a-871b-f6327c9d53eb.png)
-![изображение](https://user-images.githubusercontent.com/37770139/143091646-225306f6-e215-4b18-96a1-9c56144afe61.png)
+![изображение](https://user-images.githubusercontent.com/37770139/143093948-61d26ca7-052f-466b-9a83-aace72b5db3d.png)
+![изображение](https://user-images.githubusercontent.com/37770139/143093813-44853416-0cf2-44e9-b557-078207799233.png)
 
 
 
