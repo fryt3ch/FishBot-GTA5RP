@@ -146,15 +146,15 @@ Object detection from an input image
 
 <a name="about-bot-2"/> 
 
-### Принцип работы антикапчи:  
-+ Образная схема взаимодействия с клиентом (без подробностей)   
+### Anti-captcha:  
++ User interaction (schematically, no details)   
 ![изображение](https://user-images.githubusercontent.com/37770139/143093813-44853416-0cf2-44e9-b557-078207799233.png "Scheme")
-+ Антикапча запускается отдельным приложением и представляет из себя TCP сервер, ожидающий подключения клиентов  
-+ Как только у одного из пользователей появляется капча, бот подключается к TCP серверу антикапчи, происходит аутентификация (бот высылает HWID пользователя, антикапча проверяет через POST/GET запрос к нашему **captcha.php**, есть ли у данного пользователя доступ к антикапче)  
-+ Если аутентификация прошла успешна, пользователь добавляется в очередь на решение капчи и пока он находится в очереди, каждые 10 сек. ему высылается его номер в очереди, который бот выводит в статус, чтобы пользователь мог понять, сколько ему еще осталось ждать
-+ При запуске нашего сервера мы можем ввести число - кол-во сущностей, которые будут работать с пользователями (1 сущность - одновременно обрабатывается 1 пользователь). Когда очередь не пуста, каждая сущность пытается взять из очереди клиента, который успешно прошел аутентификацию и был допущен к решению капчи. Как только одной (или нескольким сразу) сущности это удалось, начинается обработка клиента
-+ Все картинки, полученные от разных пользователей обрабатывает единый объект **YoloWrapper**. Мы используем **Mutex**, чтобы предотвратить одновременный доступ к **YoloWrapper** со стороны нескольких сущностей
-    + Для чего нам вводить понятие **сущностей** в наш проект? Дело в том, что пока **YoloWrapper** работает с сущностью **N1**, другие (**N2**, **N3**, и т.д.) за это время уже начнут обрабатывать капчу (примут массив с байтами со стороны клиента, выяснят, что надо искать в капче, какое задание выполнять), а когда обработка **YoloWrapper**, запущенная со стороны сущности **N1**, закончится, тогда уже **N2** запустит свою обработку **YoloWrapper**. Таким образом вы увеличиваем скорость прохождения капчи в случае, если у нас много пользователей
++ Anti-captcha is presented as single application (server) waiting for connections from users with active anti-captcha subscribtion  
++ Once user has an appeared captcha, bot connects to our anti-captcha TCP server, then authentication is being performed  
++ If authorization is completed successfully, user is added to server's queue and while user is in queue, server sends to user its position in it every 10 seconds, bot gets it and shows in status to make user see, how long he needs to wait  
++ When launching our server we should enter the number - amount of instances, which will operate with users (1 instance - 1 user at one moment). When queue isn't empty, every instance tries to get next client from queue. As soon as one (or more) instance gets such user it starts to operate with it  
++ All the images recieved from different users are being operated by single object - **YoloWrapper**. Also we use **Mutex** to avoid synchronous access to our **YoloWrapper** from diffrent instances  
+    + Why do we need to use **instances** in our project? The point is that while single **YoloWrapper** operates with instance **N1**, others (**N2**, **N3**, и etc.) at that moment begin to perform some actions before directly solving captcha by using **YoloWrapper** (recieve byte array from client, figure out what do we need to find in captcha image and which task do we need to complete), and when the processing of captcha using **YoloWrapper** started by instance **N1** ends, **N2** starts **YoloWrapper** processing for its captcha image. Using this method we get fine speed performance  
 + Как только сущность антикапчи закончила обработку полученного изображения, она высылает своему клиенту сериализованный словарь, ключ которого - точка (куда нажимать боту на капче), а значение - число (пауза между текущим и следующим нажатием)  
 + Бот получает этот словарь и выполняет указанные сервером действия. Таким образом и проходится капча  
 
