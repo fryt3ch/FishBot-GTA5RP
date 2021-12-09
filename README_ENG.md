@@ -155,18 +155,18 @@ Object detection from an input image
 + When launching our server we should enter the number - amount of instances, which will operate with users (1 instance - 1 user at one moment). When queue isn't empty, every instance tries to get next client from queue. As soon as one (or more) instance gets such user it starts to operate with it  
 + All the images recieved from different users are being operated by single object - **YoloWrapper**. Also we use **Mutex** to avoid synchronous access to our **YoloWrapper** from diffrent instances  
     + Why do we need to use **instances** in our project? The point is that while single **YoloWrapper** operates with instance **N1**, others (**N2**, **N3**, и etc.) at that moment begin to perform some actions before directly solving captcha by using **YoloWrapper** (recieve byte array from client, figure out what do we need to find in captcha image and which task do we need to complete), and when the processing of captcha using **YoloWrapper** started by instance **N1** ends, **N2** starts **YoloWrapper** processing for its captcha image. Using this method we get fine speed performance  
-+ Как только сущность антикапчи закончила обработку полученного изображения, она высылает своему клиенту сериализованный словарь, ключ которого - точка (куда нажимать боту на капче), а значение - число (пауза между текущим и следующим нажатием)  
-+ Бот получает этот словарь и выполняет указанные сервером действия. Таким образом и проходится капча  
++ Once an intance ends operating with user (captcha is completed) it sends to it serialized "Point - Number" dictionary (point where bot needs to make a click and pause before next click)  
++ Bot gets this dictionary and performs the specified actions. That's how captcha is passed   
 
 <a name="about-subscribtions"/> 
 
-## Возможности системы подписок на приложение:  
-+ Привязка пользователей по принципу ID VK - уникальный ключ - HWID (уникальный ключ формата FISHBOT_[0-9A-Z]{16}, пример: FISHBOT_Y1NZVSY18W6EJUFA)
-    + Пользователь получает ключ в группе ВК в автоматическом режиме, используя комманду "бесплатный ключ", сгенерированный ключ привязывается к пользователю по VK ID. Как только пользователь введет этот ключ при запуске бота, ключ привяжется к HWID пользователя (уникальный идентификатор компьютера, только на котором будет работать данный ключ)  
-+ Выдача подписок (как на бота, так и на антикапчу) администратором в автоматическом режиме через ту же группу ВК. Достаточно использовать команду "выдать бота (или капчу) [VK ID] [Период]. Допустимый диапазон поля [Период] - 1 неделя, 2 недели, 1 месяц, Навсегда  
-+ Просмотр всей информации о пользователе администратором, используя команду "подписки [VK ID]"  
-+ Аннулирование подписки администратором, используя команду "аннулировать [VK ID]"  
-+ Сброс HWID у пользователя администратором, используя команду "сброс [VK ID]"  
+## Abilities of subscribtions system:  
++ Adding users to our database by their VK ID assigning to it and unique key (keys' format is FISHBOT_[0-9A-Z]{16}, example: FISHBOT_Y1NZVSY18W6EJUFA)
+    + User gets a new free key automatically using command "free key", then new generated key binds to user by VK ID. Once user enters this key in bot's login window, this key binds to HWID of user's PC (unique PC identifier, only on which this key will work)  
++ Giving subscribtions (both to bot and anti-captcha) by administrator. You need to use command "give bot (or captcha) [VK ID] [Period]". Available range of values for period field - 1 week, 2 weeks, 1 mounth, Forever    
++ Viewing all the information about user by administrator by using command "subscribtions [VK ID]"  
++ Cancellation of subscribtion by administrator of any user by using command "cancel [VK ID]"  
++ Resetting HWID by administrator of any user by using command "reset [VK ID]"  
 
 
 
