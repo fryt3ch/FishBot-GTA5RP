@@ -1,4 +1,4 @@
-# FishBot for GTA5 RP
+# Бот на рыбалку для GTA5 RP (FishBot)
 ## Умный многофункциональный бот, способный решать Google reCaptcha v2
 
 [English README](README_ENG.md)
