@@ -3,6 +3,9 @@
 
 [English README](README_ENG.md)
 
+## Попробовать / приобрести бота
++ https://vk.com/fishbot_gta5rp
+
 ## Оглавление
 + [Используемые технологии](#tools)  
     + [Клиентская часть](#tools-client)  
