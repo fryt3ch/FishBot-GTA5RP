@@ -1,0 +1,70 @@
+﻿<Window x:Class="FishBot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FishBot"
+        mc:Ignorable="d"
+        Loaded="WindowLoaded"
+        Title="FishBot" Width="300" Height="465" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontFamily="Consolas" >
+
+    <Grid x:Name="MenuGrid" Opacity="0.9">
+        <Grid x:Name="StatusGrid" Margin="0,0,0,350" Background="Transparent" MouseRightButtonDown="StatusGridMouseRightClick">
+            <Border BorderBrush="#171717" Background="#171717" BorderThickness="0" CornerRadius="10" Margin="0,0,0,31.8"/>
+
+            <TextBlock x:Name="StatusText" Text="Бот выключен!" ToolTip="Скрыть/показать панель - F8&#x0a;Выйти - F9&#x0a;Включить/выключить бота - F4&#x0a;Переложить рыбу в багажник - F5&#x0a;Показать/скрыть настройки - ПКМ по панели или Insert" TextWrapping="Wrap" Margin="10,24,0,21.6" FontWeight="Bold" FontSize="14" Foreground="Red" HorizontalAlignment="Left" Width="178"/>
+            <Label x:Name="NameLabel" ToolTip="vk.com/frytech" Content="FishBot by frytech (for GTA5 RP)" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Margin="0"/>
+            <Label x:Name="SleepLabel" Content="Сон: 0 сек." HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" Margin="10,0,0,31.8" FontSize="12"/>
+            <Label x:Name="TimeRemainLabel" Content="Подписка: 777 час." HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" Margin="0,0,10,31.8" FontSize="12"/>
+            <Label x:Name="IncomeLabel" ToolTip="Нажмите 2 раза ЛКМ чтобы обнулить счетчик прибыли&#x0a;Нажмите 2 раза ПКМ чтобы пересчитать прибыль в максимальную/минимальную&#x0a;Нажмите на колесико мыши чтобы перейти к статистике" Content="0 $" VerticalAlignment="Top" FontWeight="Bold" Foreground="Lime" Margin="0,24,10,0" FontSize="14" MouseDoubleClick="IncomeLabelDoubleClick" MouseDown="IncomeLabelMouseDown" HorizontalAlignment="Right"/>
+        </Grid>
+
+        <GridSplitter Opacity="0" HorizontalAlignment="Stretch" Margin="0,100,0,340" IsEnabled="False" />
+
+        <Grid x:Name="SettingsGrid" Margin="0,110,0,0" Background="Transparent">
+            <Border BorderBrush="#171717" Background="#171717" BorderThickness="0" CornerRadius="10" Margin="0,-15,0,10.4"/>
+
+            <Label x:Name="SettingsLabel" Content="Конфигурация" ToolTip="Нажмите 2 раза ЛКМ, чтобы открыть файл конфигурации&#x0a;Нажмите 2 раза ПКМ, чтобы сбросить конфигурацию" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="10,-16,10,326.6" FontSize="16" HorizontalAlignment="Center" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseDoubleClick="ConfigLabelDoubleClick"/>
+
+            <Grid x:Name="CheckboxGrid" Margin="0,18,0,75.4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="87*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="sounds_on" Content="Звуковые уведомления" ToolTip="Издает звук, если появляется капча или инвентарь переполняется" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="hunger_check" Content="Проверять голод" ToolTip="Если вы голодны, то бот остановится (или поест, см. след функции)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="mood_check" Content="Проверять настроение" ToolTip="Если у вас плохое настроение, то бот остановится (или нет, см. след функции)" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="auto_eat" Content="Автоматически есть" ToolTip="Если вы голодны, то бот найдет еду в инвентаре и съест&#x0a;(список еды можно менять в файле конфигурации)" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="auto_smoke" Content="Автоматически поднимать настроение" ToolTip="Если у вас плохое настроение, то бот либо выкурит 1 или 2 сигареты (сам поймет, сколько надо)" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="boat_shift" Content="Использовать багажник лодки (H)" ToolTip="Используйте эту функцию, если рыбачите с лодкой&#x0a;Бот будет перекладывать рыбу в багажник лодки при перегрузе инвентаря&#x0a;Назначьте кнопку H на открытие багажника!" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="drop_fish" Content="Выбрасывать рыбу" ToolTip="Если инвентарь переполняется, то бот выбрасывает всю рыбу, которая указана в файле конфигурации" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="bypass_captcha" Content="Проходить капчу" ToolTip="Ваша подписка активна!" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="fault_stop" Content="Останавливаться, если рыба сорвалась" ToolTip="Если вдруг (за время тестов такого не было) рыба сорвалась, то бот остановится" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="realistic_on" Content="Реалистичное поведение" ToolTip="Случайная пауза между подходами&#x0a;Случайное время вылавливания рыбы&#x0a;Эта функция защитит вас от палева, когда за вами следят" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="tap_robot" Content="Нажимать &quot;Я робот&quot;" ToolTip="Если появляется капча, то бот нажмет на кнопку и уйдет в сон на 10 минут" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="block_mouse" Content="Блокировать мышь" ToolTip="Эта функция не позволит вам нажимать на кнопки мыши в окне игры, пока бот работает" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Background="White" IsChecked="False" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="vk_notificate" Content="Уведомления в ВК" ToolTip="Уведомления о капчах/перегрузе к вам в ВК" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Background="White" IsChecked="True" Foreground="White" Click="CheckBoxClicked" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <Slider x:Name="click_latency" Margin="10,304,190,7.8" UseLayoutRounding="True" Maximum="200" ValueChanged="SliderChanged" TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True" SmallChange="1" LargeChange="5" Minimum="50"/>
+            <Label x:Name="SliderLabel" ToolTip="Время задержки между кликами мыши во время вылова рыбы (в миллисекундах)" Content="100 ms" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Margin="31.8,280.8,0,0" Width="65.8" UseLayoutRounding="False" Height="23"/>
+
+            <Label x:Name="OpacityLabel" ToolTip="Прозрачность меню" Content="80 %" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Margin="227.4,280.8,0,0" Width="50.6" UseLayoutRounding="False" Height="23"/>
+            <Slider x:Name="opacity" Margin="200,304,10,6.8" Minimum="0.1" Maximum="1" TickPlacement="BottomRight" TickFrequency="0.1" IsSnapToTickEnabled="True" ValueChanged="OpacitySliderChanged" LargeChange="0.1"/>
+        </Grid>
+
+        <Grid x:Name="FishMenuGrid" Margin="0,110,0,0" Background="Transparent" Visibility="Hidden">
+            <Border BorderBrush="#171616" Background="#171616" BorderThickness="0" CornerRadius="15"/>
+
+            <Label x:Name="FishMenuLabel" Content="Статистика" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="0,0,0,300" FontSize="16" HorizontalAlignment="Center" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <DataGrid x:Name="FishMenuData" Margin="10,74,10,45" Background="#171616" Foreground="#FF171616" BorderBrush="{x:Null}">
+                <DataGrid.RowHeaderStyle>
+                    <Style>
+                        <Setter Property="Control.Background" Value="#171616"/>
+                    </Style>
+                </DataGrid.RowHeaderStyle>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

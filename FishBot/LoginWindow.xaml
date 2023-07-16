@@ -1,0 +1,27 @@
+﻿<Window x:Class="FishBot.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FishBot"
+        mc:Ignorable="d"
+        Loaded="LoginWindowLoaded"
+        Title="FishBot Login" Height="200" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Consolas" FontWeight="Bold" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Background="Transparent" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid>
+        <Border MouseDown="MoveWindow" BorderBrush="#171717" Background="#171717" Opacity="0.99" BorderThickness="0" CornerRadius="15"/>
+
+        <Label MouseDown="MoveWindow" Content="Fishbot for GTA5 RP" Margin="97,0,98,171" Background="#00000000" Foreground="White" FontSize="18"/>
+        <Label Content="Авторизация" Margin="137,34,137,137" Background="#00000000" Foreground="White" FontSize="18"/>
+
+        <TextBox x:Name="KeyInputField" MaxLength="24" TextWrapping="Wrap" Text="" Margin="81,90" Background="White" BorderThickness="0" Foreground="#FF171616" FontSize="14" SelectionBrush="#FFF01919" SelectionOpacity="0.5"/>
+
+        <Label x:Name="LoginLabel" Content="Войти" Margin="169,115,170,56" Background="#00000000" Foreground="White" FontSize="18" MouseEnter="LabelMouseEnter" MouseLeave="LabelMouseLeave" MouseLeftButtonDown="LoginLabelMouseLeftDown"/>
+
+        <TextBlock Margin="10,170,290,0" Background="#00000000" Foreground="White" FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center" TextDecorations="{x:Null}">
+            <Hyperlink NavigateUri="https://vk.link/fishbot_gta5rp" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White" TextDecorations="None">
+                Получить ключ     
+            </Hyperlink>
+        </TextBlock>
+        <Label Content="Выход" Margin="300,170,10,0" Background="#00000000" Foreground="#FFF02D19" FontSize="12" MouseEnter="LabelMouseEnter" MouseLeave="LabelMouseLeave" MouseLeftButtonDown="ExitLabelMouseLeftDown" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>

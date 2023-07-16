@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fishbot note="Не лезь, если не знаешь что менять :)">
+  <author value="@frytech">
+  </author>
+  <menu_settings>
+    <opacity value="100">
+    </opacity>
+    <user_key value="">
+    </user_key>
+	<!-- Введите сюда свой API ключ с сайта RuCaptcha-->
+	<captcha_api_key value="">
+	</captcha_api_key>
+  </menu_settings>
+  <bot_settings>
+    <realistic_on value="True">
+    </realistic_on>
+    <sounds_on value="True">
+    </sounds_on>
+    <click_latency value="100">
+    </click_latency>
+    <block_mouse value="False">
+    </block_mouse>
+    <mood_check value="True">
+    </mood_check>
+    <hunger_check value="False">
+    </hunger_check>
+    <auto_eat value="False">
+    </auto_eat>
+    <auto_smoke value="False">
+    </auto_smoke>
+    <boat_shift value="False">
+    </boat_shift>
+    <drop_fish value="False">
+    </drop_fish>
+    <bypass_captcha value="False">
+    </bypass_captcha>
+    <subtract_bait value="True">
+    </subtract_bait>
+    <fault_stop value="True">
+    </fault_stop>
+    <tap_robot value="False">
+    </tap_robot>
+    <vk_notificate value="True">
+    </vk_notificate>
+	<overweight_behaviour value="True">
+	</overweight_behaviour>
+  
+
+</bot_settings>
+  <!-- Можете добавить сюда (через пробел) название еды, которую вы будете использовать -->
+  <!-- Если название еды длинное, то лучше добавить только ключевое слово (пример: Овощное рагу -> Рагу) -->
+  <food list="Бургер Чипсы Шоколадка Смузи Кола Пицца">
+  </food>
+  <!-- Можете добавить сюда (через пробел) названия рыбы, которые бот будет выбрасывать при перегрузе инвентаря -->
+  <fish_to_drop list="Стерлядь">
+  </fish_to_drop>
+  <phrases>
+    <bad R="255" G="0" B="0">
+      <GameNotFound value="Игра не найдена!">
+      </GameNotFound>
+      <ResolutionNotFound value="Разрешение не поддерживается!">
+      </ResolutionNotFound>
+      <NoCarOrBoatNear value="Нечего перекладывать!&#x0a;(или назначьте H на открытие багажника)">
+      </NoCarOrBoatNear>
+      <BotStopped value="Бот выключен!">
+      </BotStopped>
+      <NoFishing value="Здесь нельзя рыбачить!">
+      </NoFishing>
+      <NoFishingVK value="Место не для рыбалки! Возможно, вас телепортировали!">
+      </NoFishingVK>
+      <RodNotFound1 value="Удочка не найдена! Еще раз...">
+      </RodNotFound1>
+      <RodNotFound2 value="Удочка не найдена!">
+      </RodNotFound2>
+      <BaitNotFound value="Приманка не найдена!">
+      </BaitNotFound>
+      <BaitOut value="Приманка закончилась!">
+      </BaitOut>
+      <FishingFault value="Рыба сорвалась :(">
+      </FishingFault>
+      <CaptchaAppeared value="Пройдите капчу!">
+      </CaptchaAppeared>
+      <ActionRestricted value="Действие заблокировано!">
+      </ActionRestricted>
+      <Overweight value="Инвентарь перегружен!">
+      </Overweight>
+      <NoPlaceInBag value="В сумке нет места!">
+      </NoPlaceInBag>
+      <CaptchaError value="Ошибка решения капчи!">
+      </CaptchaError>
+      <SomethingWentWrong value="Что-то пошло не так! Попробуйте запустить бота заново, такое возможно из-за высокого пинга в игре либо из-за того, что у вас лодка желтого цвета (в таком случае, попробуйте повернуть камеру в другую сторону)">
+      </SomethingWentWrong>
+    </bad>
+    <good R="0" G="255" B="0">
+      <BotStarted value="Бот запущен!">
+      </BotStarted>
+      <ShiftFinish value="Переложил всю рыбу!">
+      </ShiftFinish>
+      <Fishing value="Рыбачу...">
+      </Fishing>
+      <FishingOut value="Вылавливаю...">
+      </FishingOut>
+      <FishingSuccess value="Поймал!">
+      </FishingSuccess>
+      <Eating value="Кушаю...">
+      </Eating>
+      <Smoking value="Курю...">
+      </Smoking>
+      <DroppingFish value="Выкидываю рыбу...">
+      </DroppingFish>
+      <ShiftingFish value="Перекладываю рыбу...">
+      </ShiftingFish>
+      <CaptchaConnecting value="Подключаюсь к серверу...">
+      </CaptchaConnecting>
+      <CaptchaProcessing value="Прохожу капчу...">
+      </CaptchaProcessing>
+      <CaptchaCompleted value="Капча пройдена!">
+      </CaptchaCompleted>
+    </good>
+    <neutral R="255" G="165" B="0">
+      <Hungry value="Вы проголодались!">
+      </Hungry>
+      <BadMood value="У вас плохое настроение!">
+      </BadMood>
+      <BotGoneSleep value="Бот ушел спать...">
+      </BotGoneSleep>
+      <BotStillSleeping value="Бот все еще спит!">
+      </BotStillSleeping>
+      <NoFood value="Не нашел еду :(">
+      </NoFood>
+      <NoSigs value="Не нашел сигареты :(">
+      </NoSigs>
+      <CaptchaInQueue value="Вы в очереди: ">
+      </CaptchaInQueue>
+    </neutral>
+  </phrases>
+  <prices>
+    <min стерлядь="36" осётр="88" лосось="49" тунец="560" амур="176" скат="200" мальма="840" фугу="2200">
+    </min>
+    <max стерлядь="47" осётр="116" лосось="64" тунец="735" амур="231" скат="263" мальма="1103" фугу="2650">
+    </max>
+  </prices>
+  <weights стерлядь="0,3" осётр="0,3" лосось="0,3" тунец="0,4" амур="0,4" скат="0,4" мальма="0,4" фугу="0,5"/>
+  <colours note="Вот сюда точно не лезь, только для тех, кто использует Redux, и то лучше меня спросить">
+    <hunger R="240" G="125" B="0">
+    </hunger>
+    <mood R="211" G="2" B="229">
+    </mood>
+    <can_fish R="255" G="216" B="0">
+    </can_fish>
+    <click R="255" G="0" B="0">
+    </click>
+    <wait R="229" G="229" B="229">
+    </wait>
+    <success R="152" G="252" B="3">
+    </success>
+    <fault R="217" G="0" B="27">
+    </fault>
+    <captcha R="245" G="35" B="60">
+    </captcha>
+  </colours>
+</fishbot>
